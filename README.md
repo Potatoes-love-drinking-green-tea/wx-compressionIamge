@@ -17,12 +17,12 @@
   }  
 }
 2. WXML 中使用
-html
+```html
 <compressionImage file_path_list="{{xczpArr}}" bind:imageCompressedList="handleImageCompressed"></compressionImage>
 3. JS 文件
 在页面的 JavaScript 文件中，你需要定义处理压缩后图片的函数，并调用 wx.chooseMedia 来选择图片：
 
-javascript
+```javascript
 Page({  
   data: {  
     xczpArr: [],  
@@ -44,10 +44,9 @@ Page({
       success: (res) => {  
         const imgArr = res.tempFiles;  
         let xczpOldArr = this.data.xczpArr;  
-  
         if (imgArr && imgArr.length > 0) {  
           const xczpNewArr = [...xczpOldArr, ...imgArr];  
-          const xczpNowArr = xczpNewArr.slice(0, 3); // 只取前3张图片  
+          const xczpNowArr = xczpNewArr.slice(0, 3); 
   
           this.setData({  
             xczpCount: this.data.xczpCount + imgArr.length,  
@@ -60,7 +59,6 @@ Page({
       }  
     });  
   }  
-  // 注意：这里假设你有一个方法或事件来触发 chooseImages() 函数  
 });
 4. 配合 wx.chooseMedia 获取图片路径
 组件内部会监听 file_path_list 的变化，并自动进行压缩。
