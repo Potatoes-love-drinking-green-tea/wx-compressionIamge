@@ -1,0 +1,5 @@
+.myCanvas {
+  position: fixed;
+  left: -100vw;
+  top: -100vh;
+}
