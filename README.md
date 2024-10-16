@@ -119,5 +119,16 @@ Page({
   - 类型：`Boolean`
   - 默认值：`true`
   - 说明：是否开启压缩日志
-
- 
+    
+### 6.返回值在handleImageCompressed函数中接收
+![image](https://github.com/user-attachments/assets/6a2f7e71-982d-48b9-91d9-012d3be84b4c)
+![image](https://github.com/user-attachments/assets/af295f2f-a431-479c-843c-42144cbf2af7)
+类似wx.chooseMedia返回的图片路径对象
+```js  
+  handleImageCompressed(e) {  
+    this.setData({  
+      ysimgList: e.detail.res  
+    });  
+  },   
+```
+### 7.好用请记得给作者加星，谢谢各位codewirter，有问题也请留言，或联系邮箱332746822@qq.com
